@@ -25,6 +25,10 @@ function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) ===
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
+
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
@@ -43,11 +47,19 @@ function (_Component) {
   }
 
   _createClass(ExtendedComponent, [{
+    key: "setState",
+    value: function setState(state, callback) {
+      this._erc_state = this.initCustomState(state);
+
+      _get(_getPrototypeOf(ExtendedComponent.prototype), "setState", this).call(this, state, callback);
+    }
+  }, {
     key: "initCustomState",
     value: function initCustomState() {
       var _this = this;
 
       var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+      state = Object.assign({}, this.state, state);
       var newState = {};
       Object.keys(state).map(function (key) {
         Object.defineProperty(newState, key, {
@@ -55,7 +67,7 @@ function (_Component) {
             return _this.state[key];
           },
           set: function set(v) {
-            _this.setState(_defineProperty({}, key, v));
+            _get(_getPrototypeOf(ExtendedComponent.prototype), "setState", _this).call(_this, _defineProperty({}, key, v));
           }
         });
       });

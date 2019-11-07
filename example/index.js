@@ -13,7 +13,8 @@ class IndexComponent extends ExtendedComponent {
 
 		setTimeout(() => {
 			this.setState({
-				test: 2
+				test: 2,
+				test2: 1
 			});
 
 			setTimeout(() => {
@@ -30,6 +31,9 @@ class IndexComponent extends ExtendedComponent {
 				</div>
 				<div>
 					this.state.test: {this.state.test}
+				</div>
+				<div>
+					this.s.test2: {this.s.test2}
 				</div>
 			</div>
 		);

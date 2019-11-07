@@ -20,7 +20,14 @@ class ExtendedComponent extends Component {
 		this._erc_state = this.initCustomState(state);
 	}
 
+	setState(state, callback) {
+		this._erc_state = this.initCustomState(state);
+		super.setState(state, callback);
+	}
+
 	initCustomState(state = {}) {
+		state = Object.assign({}, this.state, state);
+
 		const newState = {};
 
 		Object.keys(state).map(key => {
@@ -29,7 +36,7 @@ class ExtendedComponent extends Component {
 					return this.state[key];
 				},
 				set: (v) => {
-					this.setState({
+					super.setState({
 						[key]: v
 					});
 				},
