@@ -1,0 +1,33 @@
+{
+	"name": "erc2",
+	"version": "0.0.1",
+	"description": "Extended React Component",
+	"main": "dist/extended-component.js",
+	"scripts": {
+		"watch": "babel src --out-dir dist --watch",
+		"build": "babel src --out-dir dist",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/yevheni/erc.git"
+	},
+	"keywords": [
+		"extended",
+		"react",
+		"component",
+		"angular"
+	],
+	"author": "Yevhenii Korchak",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/yevheni/erc/issues"
+	},
+	"homepage": "https://github.com/yevheni/erc#readme",
+	"devDependencies": {
+		"@babel/cli": "^7.7.0",
+		"@babel/core": "^7.7.2",
+		"@babel/node": "^7.7.0",
+		"@babel/preset-env": "^7.7.1"
+	}
+}
