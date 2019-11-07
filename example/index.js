@@ -23,13 +23,14 @@ class IndexComponent extends ExtendedComponent {
 	}
 
 	render() {
-		const {
-			test
-		} = this.s;
-
 		return (
 			<div className="index-page">
-				Index: {test}
+				<div>
+					this.s.test: {this.s.test}
+				</div>
+				<div>
+					this.state.test: {this.state.test}
+				</div>
 			</div>
 		);
 	}

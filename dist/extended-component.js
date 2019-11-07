@@ -69,6 +69,10 @@ function (_Component) {
   }, {
     key: "s",
     get: function get() {
+      if (!this._erc_state) {
+        this.s = this.state;
+      }
+
       return this._erc_state;
     },
     set: function set(value) {

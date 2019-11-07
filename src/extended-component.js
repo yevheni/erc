@@ -6,6 +6,10 @@ class ExtendedComponent extends Component {
 	}
 
 	get s() {
+		if (!this._erc_state) {
+			this.s = this.state;
+		}
+
 		return this._erc_state;
 	}
 
