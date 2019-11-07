@@ -1,3 +1,5 @@
+import React from "react";
+import {render} from "react-dom";
 import {ExtendedComponent} from "../src/extended-component";
 
 class IndexComponent extends ExtendedComponent {
@@ -5,36 +7,38 @@ class IndexComponent extends ExtendedComponent {
 	constructor(props) {
 		super(props);
 
-		this.state = {};
+		this.s = {
+			test: 1,
+		};
+
+		setTimeout(() => {
+			this.setState({
+				test: 2
+			});
+
+			setTimeout(() => {
+				this.s.test = 3;
+			}, 1000);
+		}, 1000);
 	}
 
 	render() {
+		const {
+			test
+		} = this.s;
+
 		return (
 			<div className="index-page">
-			<Helmet>
-			<title>
-			User Index
-		</title>
-		</Helmet>
-
-		<div className="container py-5">
-			User Index
-		</div>
-		</div>
-	);
+				Index: {test}
+			</div>
+		);
 	}
 }
 
-const jsx = <Provider store={store}>
-	<BrowserRouter>
-		<AppComponent/>
-	</BrowserRouter>
-</Provider>;
+const jsx = (
+	<IndexComponent/>
+);
 
 const container = document.getElementById('app');
 
-if (container.innerHTML) {
-	hydrate(jsx, container);
-} else {
-	render(jsx, container);
-}
+render(jsx, container);

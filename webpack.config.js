@@ -1,5 +1,5 @@
 const path = require('path');
-const port = 6666;
+const port = 7777;
 
 module.exports = {
 	entry: {
