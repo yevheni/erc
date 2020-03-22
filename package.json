@@ -1,12 +1,11 @@
 {
 	"name": "erc2",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"description": "Extended React Component",
-	"main": "dist/extended-component.js",
+	"main": "src/ExtendedComponent.js",
+	"types": "src/ExtendedComponent.d.ts",
 	"scripts": {
-		"watch": "babel src --out-dir dist --watch",
-		"build": "babel src --out-dir dist",
-		"client": "webpack-dev-server",
+		"build": "tsc",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
@@ -25,21 +24,10 @@
 		"url": "https://github.com/yevheni/erc/issues"
 	},
 	"homepage": "https://github.com/yevheni/erc#readme",
-	"devDependencies": {
-		"@babel/cli": "^7.7.0",
-		"@babel/core": "^7.7.2",
-		"@babel/node": "^7.7.0",
-		"@babel/plugin-syntax-dynamic-import": "^7.2.0",
-		"@babel/plugin-transform-arrow-functions": "^7.2.0",
-		"@babel/preset-env": "^7.7.1",
-		"@babel/preset-react": "^7.7.0",
-		"babel-loader": "^8.0.6",
-		"webpack": "^4.41.2",
-		"webpack-cli": "^3.3.10",
-		"webpack-dev-server": "^3.9.0"
-	},
 	"dependencies": {
-		"react": "^16.11.0",
-		"react-dom": "^16.11.0"
+		"@types/react": "^16.9.25",
+		"@types/react-dom": "^16.9.5",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1"
 	}
 }

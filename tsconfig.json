@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+		"module": "CommonJS",
+		"target": "ES5",
+		"removeComments": false,
+		"sourceMap": true,
+		"declaration": true,
+		"jsx": "react"
+	},
+	"files": [
+		"src/ExtendedComponent.tsx"
+	]
+}

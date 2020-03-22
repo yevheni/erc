@@ -3,5 +3,4 @@ webpack.config.js
 .editorconfig
 
 .idea
-src
 example

@@ -1,6 +1,6 @@
 import React from "react";
 import {render} from "react-dom";
-import {ExtendedComponent} from "../src/extended-component";
+import ExtendedComponent from "../src/ExtendedComponent";
 
 class IndexComponent extends ExtendedComponent {
 
