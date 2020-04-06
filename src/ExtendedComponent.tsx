@@ -1,6 +1,6 @@
 import {Component} from "react";
 
-export default class ExtendedComponent extends Component<any, any> {
+export default class ExtendedComponent<Props = {}, State = {}> extends Component<Props, any> {
 	private _s = {};
 
 	get isClient() {

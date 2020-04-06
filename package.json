@@ -1,6 +1,6 @@
 {
 	"name": "erc2",
-	"version": "0.0.4",
+	"version": "0.1.0",
 	"description": "Extended React Component",
 	"main": "src/ExtendedComponent.js",
 	"types": "src/ExtendedComponent.d.ts",
@@ -25,9 +25,11 @@
 	},
 	"homepage": "https://github.com/yevheni/erc#readme",
 	"dependencies": {
-		"@types/react": "^16.9.25",
-		"@types/react-dom": "^16.9.5",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1"
+	},
+	"devDependencies": {
+		"@types/react": "^16.9.25",
+		"@types/react-dom": "^16.9.5"
 	}
 }
