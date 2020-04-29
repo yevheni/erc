@@ -21,7 +21,7 @@ export default class ExtendedComponent<Props = {}, State = {}> extends Component
 		this._s = this.initCustomState(state);
 	}
 
-	setState(state: object, callback: () => any) {
+	setState(state: object, callback?: () => any) {
 		this._s = this.initCustomState(state);
 		super.setState(state, callback);
 	}
