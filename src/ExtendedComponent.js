@@ -1,5 +1,7 @@
-import { Component } from "react";
-export default class ExtendedComponent extends Component {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = require("react");
+class ExtendedComponent extends react_1.Component {
     constructor() {
         super(...arguments);
         this._s = {};
@@ -42,4 +44,5 @@ export default class ExtendedComponent extends Component {
         return newState;
     }
 }
+exports.default = ExtendedComponent;
 //# sourceMappingURL=ExtendedComponent.js.map

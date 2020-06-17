@@ -1,9 +1,6 @@
 {
 	"compilerOptions": {
-		"module": "ESNext",
-		"moduleResolution": "node",
-		"esModuleInterop": true,
-		"allowSyntheticDefaultImports": true,
+		"module": "CommonJS",
 		"target": "ES6",
 		"removeComments": false,
 		"sourceMap": true,
