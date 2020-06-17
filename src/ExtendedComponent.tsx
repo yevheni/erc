@@ -40,6 +40,9 @@ export default class ExtendedComponent<Props = {}, State = {}> extends Component
 					return this.state[key];
 				},
 				set: (v) => {
+					// @ts-ignore
+					this.state[key] = v;
+
 					super.setState({
 						[key]: v
 					});
