@@ -1,13 +1,10 @@
 import {Component} from "react";
 
+interface IObject {
+	[key: string]: any
+}
 export default class ExtendedComponent<Props = {}, State = {}> extends Component<Props, any> {
-	private _s: {
-		[key: string]: any
-	} = {};
-
-	get isClient() {
-		return !!(typeof window !== 'undefined' && window.document);
-	}
+	private _s: IObject = {};
 
 	get s() {
 		if (!this._s) {
@@ -17,13 +14,13 @@ export default class ExtendedComponent<Props = {}, State = {}> extends Component
 		return this._s;
 	}
 
-	set s(state: object) {
+	set s(state: IObject) {
 		// eslint-disable-next-line react/no-direct-mutation-state
 		this.state = state;
 		this._s = this.initCustomState(state);
 	}
 
-	setState(state: object, callback?: () => any) {
+	setState(state: IObject, callback?: () => any) {
 		this._s = this.initCustomState(state);
 		super.setState(state, callback);
 	}
@@ -53,5 +50,9 @@ export default class ExtendedComponent<Props = {}, State = {}> extends Component
 		});
 
 		return newState;
+	}
+
+	get isClient() {
+		return !!(typeof window !== 'undefined' && window.document);
 	}
 }
