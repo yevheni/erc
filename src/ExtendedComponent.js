@@ -6,9 +6,6 @@ class ExtendedComponent extends react_1.Component {
         super(...arguments);
         this._s = {};
     }
-    get isClient() {
-        return !!(typeof window !== 'undefined' && window.document);
-    }
     get s() {
         if (!this._s) {
             this.s = this.state;
@@ -42,6 +39,9 @@ class ExtendedComponent extends react_1.Component {
             });
         });
         return newState;
+    }
+    get isClient() {
+        return !!(typeof window !== 'undefined' && window.document);
     }
 }
 exports.default = ExtendedComponent;
