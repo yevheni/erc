@@ -2,21 +2,36 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = require("react");
 class ExtendedComponent extends react_1.Component {
-    constructor() {
-        super(...arguments);
+    constructor(props) {
+        super(props);
+        this.s = {};
         this._s = {};
+        Object.defineProperty(this, "s", {
+            get: () => {
+                return this._s;
+            },
+            set: (v) => {
+                // eslint-disable-next-line react/no-direct-mutation-state
+                this.state = v;
+                this._s = this.initCustomState(v);
+            },
+        });
     }
-    get s() {
-        if (!this._s) {
-            this._s = this.initCustomState(this.state);
-        }
-        return this._s;
-    }
-    set s(state) {
-        // eslint-disable-next-line react/no-direct-mutation-state
-        this.state = state;
-        this._s = this.initCustomState(state);
-    }
+    // private _s: IObject = {};
+    //
+    // get s() {
+    // 	if (!this._s) {
+    // 		this._s = this.initCustomState(this.state);
+    // 	}
+    //
+    // 	return this._s;
+    // }
+    //
+    // set s(state: IObject) {
+    // 	// eslint-disable-next-line react/no-direct-mutation-state
+    // 	this.state = state;
+    // 	this._s = this.initCustomState(state);
+    // }
     setState(state, callback) {
         this._s = this.initCustomState(state);
         super.setState(state, callback);

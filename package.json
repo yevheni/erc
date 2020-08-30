@@ -1,6 +1,6 @@
 {
 	"name": "erc2",
-	"version": "0.1.6",
+	"version": "0.1.7",
 	"description": "Extended React Component",
 	"main": "src/ExtendedComponent.js",
 	"types": "src/ExtendedComponent.d.ts",

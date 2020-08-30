@@ -3,9 +3,9 @@ interface IObject {
     [key: string]: any;
 }
 export default class ExtendedComponent<Props = {}, State = {}> extends Component<Props, any> {
+    s: IObject;
     private _s;
-    get s(): IObject;
-    set s(state: IObject);
+    constructor(props: any);
     setState(state: IObject, callback?: () => any): void;
     initCustomState(state?: {}): {};
     get isClient(): boolean;
