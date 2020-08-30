@@ -4,11 +4,12 @@ interface IObject {
 	[key: string]: any
 }
 export default class ExtendedComponent<Props = {}, State = {}> extends Component<Props, any> {
+
 	private _s: IObject = {};
 
 	get s() {
 		if (!this._s) {
-			this.s = this.state;
+			this._s = this.initCustomState(this.state);
 		}
 
 		return this._s;

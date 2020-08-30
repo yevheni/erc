@@ -8,7 +8,7 @@ class ExtendedComponent extends react_1.Component {
     }
     get s() {
         if (!this._s) {
-            this.s = this.state;
+            this._s = this.initCustomState(this.state);
         }
         return this._s;
     }

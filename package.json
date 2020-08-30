@@ -1,6 +1,6 @@
 {
 	"name": "erc2",
-	"version": "0.1.5",
+	"version": "0.1.6",
 	"description": "Extended React Component",
 	"main": "src/ExtendedComponent.js",
 	"types": "src/ExtendedComponent.d.ts",
@@ -29,8 +29,8 @@
 		"react-dom": "^16.13.1"
 	},
 	"devDependencies": {
-		"@types/react": "^16.9.25",
-		"@types/react-dom": "^16.9.5",
-		"typescript": "^3.9.5"
+		"@types/react": "^16.9.48",
+		"@types/react-dom": "^16.9.8",
+		"typescript": "^4.0.2"
 	}
 }
