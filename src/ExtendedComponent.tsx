@@ -1,7 +1,9 @@
 import {Component} from "react";
 
 export default class ExtendedComponent<Props = {}, State = {}> extends Component<Props, any> {
-	private _s = {};
+	private _s: {
+		[key: string]: any
+	} = {};
 
 	get isClient() {
 		return !!(typeof window !== 'undefined' && window.document);
