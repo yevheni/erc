@@ -40,11 +40,8 @@ export default class ExtendedComponent<Props = {}, State = {}> extends Component
 					return this.state[key];
 				},
 				set: (v) => {
-					const state1: any = this.state;
-
-					state1[key] = v;
-
-					this.state = state1;
+					// @ts-ignore
+					this.state[key] = v;
 
 					super.setState({
 						[key]: v

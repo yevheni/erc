@@ -29,9 +29,8 @@ class ExtendedComponent extends react_1.Component {
                     return this.state[key];
                 },
                 set: (v) => {
-                    const state1 = this.state;
-                    state1[key] = v;
-                    this.state = state1;
+                    // @ts-ignore
+                    this.state[key] = v;
                     super.setState({
                         [key]: v
                     });

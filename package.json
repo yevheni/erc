@@ -1,6 +1,6 @@
 {
 	"name": "@yevheni/erc",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Extended React Component",
 	"main": "src/ExtendedComponent.js",
 	"types": "src/ExtendedComponent.d.ts",
