@@ -1,11 +1,12 @@
 {
-	"name": "erc2",
-	"version": "0.1.7",
+	"name": "@yevheni/erc",
+	"version": "1.0.1",
 	"description": "Extended React Component",
 	"main": "src/ExtendedComponent.js",
 	"types": "src/ExtendedComponent.d.ts",
 	"scripts": {
 		"build": "tsc",
+		"pub": "npm run build && npm publish --access public",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
@@ -25,12 +26,12 @@
 	},
 	"homepage": "https://github.com/yevheni/erc#readme",
 	"dependencies": {
-		"react": "^16.13.1",
-		"react-dom": "^16.13.1"
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1"
 	},
 	"devDependencies": {
-		"@types/react": "^16.9.48",
-		"@types/react-dom": "^16.9.8",
-		"typescript": "^4.0.2"
+		"@types/react": "^16.9.56",
+		"@types/react-dom": "^16.9.9",
+		"typescript": "^4.0.5"
 	}
 }

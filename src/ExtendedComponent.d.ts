@@ -1,5 +1,5 @@
 import { Component } from "react";
-interface IObject {
+export interface IObject {
     [key: string]: any;
 }
 export default class ExtendedComponent<Props = {}, State = {}> extends Component<Props, any> {
@@ -10,4 +10,3 @@ export default class ExtendedComponent<Props = {}, State = {}> extends Component
     initCustomState(state?: {}): {};
     get isClient(): boolean;
 }
-export {};

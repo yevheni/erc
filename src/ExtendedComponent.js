@@ -11,27 +11,11 @@ class ExtendedComponent extends react_1.Component {
                 return this._s;
             },
             set: (v) => {
-                // eslint-disable-next-line react/no-direct-mutation-state
                 this.state = v;
                 this._s = this.initCustomState(v);
             },
         });
     }
-    // private _s: IObject = {};
-    //
-    // get s() {
-    // 	if (!this._s) {
-    // 		this._s = this.initCustomState(this.state);
-    // 	}
-    //
-    // 	return this._s;
-    // }
-    //
-    // set s(state: IObject) {
-    // 	// eslint-disable-next-line react/no-direct-mutation-state
-    // 	this.state = state;
-    // 	this._s = this.initCustomState(state);
-    // }
     setState(state, callback) {
         this._s = this.initCustomState(state);
         super.setState(state, callback);
@@ -45,8 +29,9 @@ class ExtendedComponent extends react_1.Component {
                     return this.state[key];
                 },
                 set: (v) => {
-                    // @ts-ignore
-                    this.state[key] = v;
+                    const state1 = this.state;
+                    state1[key] = v;
+                    this.state = state1;
                     super.setState({
                         [key]: v
                     });
